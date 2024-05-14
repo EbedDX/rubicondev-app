@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 function Preview() {
 
@@ -15,6 +16,7 @@ function Preview() {
 
     return (
         <>
+        <Link to={"/"} className="back-button">Back</Link>
         <div className="large-container">
 
             <img className="normal-image-poster" src={`https://image.tmdb.org/t/p/w500/${titleData.poster_path}`}/>

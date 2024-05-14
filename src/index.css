@@ -218,7 +218,7 @@
   margin-left: 0;
   margin-right: 20px;
   background-color: #6d37fe;
-  padding: 0.6rem;
+  padding: 0.8rem;
   border-radius: 10px;
 }
 
@@ -226,8 +226,53 @@
   margin-right: 20px;
   margin-left: 0;
   background-color: #6d37fe;
-  padding: 0.6rem;
+  padding: 0.8rem;
   border-radius: 10px;
+}
+
+/* CSS */
+.back-button {
+  position: absolute;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #6d37fe;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Bozon";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 30px;
+  min-height: 30px;
+  min-width: 0;
+  outline: none;
+  padding: 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100px;
+  will-change: transform;
+  z-index: 9999999999999999999999;
+}
+
+.back-button:disabled {
+  pointer-events: none;
+}
+
+.back-button:hover {
+  color: white;
+  background-color: #6d37fe;
+  transform: translateY(-2px);
+}
+
+.back-button:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
 
 @media  (max-width: 1840px) {
@@ -392,7 +437,6 @@
   .name{
     margin-top: 20%;
   }
-  
 }
 
 @media  (max-width: 1024px) {
