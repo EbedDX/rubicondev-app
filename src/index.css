@@ -1,13 +1,582 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  margin: auto;
+  font-family: Bozon;
+}
+.container{
+  background-color: #212141;
+  height: 100%;
+  width: auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container-header{
+  padding: 5%;
+  padding-top: 3%;
+  text-align: center;
+}
+
+.header{
+  width: 400px;
+  max-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.logo-placeholder img{
+  width: 25vh;
+  margin-bottom: 2rem;
+}
+
+.search-bar{
+  text-align: center;
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.search-bar input{
+  width: 83%;
+  background-color: #322d65;
+  border: 2px solid #4a4484;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: white;
+  position: relative;
+  text-decoration: none;
+}
+.search-bar button{
+  cursor: pointer;
+  border: 0px solid #a280fc;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  background-color: #4a4484;
+  bottom: 0;
+}
+
+.watch-options{
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.watch-options a{
+  text-decoration: none;
+}
+
+
+.movie-section{
+  border: 0;
+  border-radius: 50px;
+  padding: 1rem;
+  background-color: #4a4484;
+  width: 150px;
+  color: white;
+  transition: all 0.3s ease 0;
+}
+
+.movie-section:hover, 
+.tvshow-section:hover,
+.movie-section.active, .tvshow-section.active{
+  background-color: #6d37fe;
+}
+
+
+.tvshow-section{
+  border: 0;
+  border-radius: 50px;
+  padding: 1rem;
+  background-color: #4a4484;
+  width: 150px;
+  color: white;
+  transition: all 0.3s ease 0;
+}
+
+.main-container{
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 10px;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.movie{
+  position: relative;
+  align-items: center;
+  width: 320px; 
+  margin-bottom: 7vh;  
+  overflow: hidden;
+}
+
+.movie img{
+  border-radius: 10px 10px 0px 0px;
+  width: 320px;
+  height: 480px;
+  transition: 0.1s ease-in;
+}
+
+.movie img:hover{
+  scale: 1.1;
+}
+
+.movie-title{
+  position: relative;
+  text-align: center;
+  /* width: 100%; */
+  background-color: #4a4484;
+  height: 78px;
+  bottom: -2.2rem;
+  border-radius: 0px 0px 10px 10px;
+  transition: all 0.3s ease 0;
+  font-size: 14px;
+  top: -5px;
+}
+
+.movie-title:hover, .movie-title h3:hover{
+  background-color: #6d37fe;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.movie-title h3{
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  font-weight: 500;
+  overflow:hidden; 
+  white-space:nowrap; 
+  text-overflow: ellipsis;
+
+}
+
+.normal-image-poster{
+  position: absolute;
+  text-align: left;
+  padding-top: 4%;
+  padding-left: 12%;
+  margin-right: 20px;
+  z-index: 2;
+}
+
+.large-container{
+  text-align: left;
+  background-color: #322d65;
+  width: 100%;
+  height: auto;
+}
+
+.name{
+  margin-bottom: 2.5%;
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+}
+
+.details{
+  font-weight: 400;
+  color: white;
+  width: 800px;
+  padding-top: 6%;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-left: 42%;
+  padding-bottom: 50px;
+  z-index: 500;
+}
+
+.data-overview{
+  margin-bottom: 2.5%;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.date{
+  font-size: 14.5px;
+  margin-top: 2.5px;
+  margin-bottom: 20px;
+  width: 180px;
+  height: 100%;
+  text-align: left;
+  margin-left: 0;
+  color: #a280fc;
+}
+
+.ep-seasons-info{
+  display: flex;
+  width: 40%;
+  text-align: center;
+  margin: 0;
+  border-radius: 10px;
+  margin-bottom: 2.5%;
+  padding-left: 0;
+}
+
+.seasons{
+  margin-left: 0;
+  margin-right: 20px;
+  background-color: #6d37fe;
+  padding: 0.6rem;
+  border-radius: 10px;
+}
+
+.episodes{
+  margin-right: 20px;
+  margin-left: 0;
+  background-color: #6d37fe;
+  padding: 0.6rem;
+  border-radius: 10px;
+}
+
+@media  (max-width: 1840px) {
+
+  
+  .data-overview{
+    width: 700px;
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .large-container{
+    text-align: left;
+    background-color: #322d65;
+    width: 100%;
+    height: 2000px; 
+  }
+
+  .details{
+    font-weight: 400;
+    color: white;
+    width: 800px;
+    padding-top: 6%;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 45%;
+    padding-bottom: 50px;
+    z-index: 500;
+  }
+  
+}
+
+@media  (max-width: 1680px) {
+
+  .data-overview{
+    width: 700px;
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .large-container{
+    text-align: left;
+    background-color: #322d65;
+    width: 1690px;
+    height: 2000px;
+  }
+
+
+
+  .seasons{
+    background-color: #6d37fe;
+    border-radius: 10px;
+  }
+  
+  .episodes{
+    background-color: #6d37fe;
+    border-radius: 10px;
+  }
+
+  .details{
+    font-weight: 400;
+    color: white;
+    width: 800px;
+    padding-top: 6%;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 45%;
+    padding-bottom: 50px;
+    z-index: 500;
+  }
+  
+}
+
+@media  (max-width: 1320px) {
+
+  embed{
+    padding-top: 7rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 1000px;
+    height: 560px;
+    padding-left: 0;
+  }
+
+  .data-overview {
+    text-align: center;
+    width: 600px;
+    margin: auto;
+    margin-bottom: 2.5rem;
+}
+
+  .large-container{
+    text-align: left;
+    background-color: #322d65;
+    width: 100%;
+    height: 2000px;
+  }
+
+  .seasons{
+    background-color: #6d37fe;
+    border-radius: 10px;
+  }
+  
+  .episodes{
+    background-color: #6d37fe;
+    border-radius: 10px;
+  }
+
+  .date{
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 14.5px;
+    margin-bottom: 20px;
+    height: 100%;
+    text-align: center;
+    color: #a280fc;
+    width: 200px;
+  }
+  
+
+  .ep-seasons-info{
+    margin-top: 2.5rem;
+    width: fit-content;
+    display: flex;
+    text-align: center;
+    margin: auto;
+    border-radius: 10px;
+    margin-bottom: 2.5%;
+    padding-left: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .normal-image-poster{
+    display: none;
+  }
+
+  .details{
+    background-color: #212141;
+    text-align: center;
+    font-weight: 400;
+    color: white;
+    padding-top: 6%;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding-bottom: 50px;
+    z-index: 500;
+    width: 100%;
+  }
+
+  
+  .name{
+    margin-top: 20%;
+  }
+  
+}
+
+@media  (max-width: 1024px) {
+
+  embed{
+    padding-top: 7rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 850px;
+    height: 480px;
+    padding-left: 0;
+  }
+
+  .watch-options{
+    margin-bottom: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .logo-placeholder img{
+    margin-top: 2rem;
+  }
+  
+}
+
+@media  (max-width: 870px) {
+
+  embed{
+    padding-top: 7rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 770px;
+    height: 435px;
+    padding-left: 0;
+    margin-bottom: 10%;
+  }
+
+  
+  .name{
+    margin-top: 20%;
+  }
+ }
+
+ @media  (max-width: 790px) {
+
+  embed{
+    padding-top: 7rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 630px;
+    height: 360px;
+    padding-left: 0;
+    margin-bottom: 10%;
+  }
+
+  .large-container{
+    width: 800px;
+    height: 1520px;
+  }
+
+  .data-overview{
+    width: 450px;
+  }
+
+ }
+
+@media  (max-width: 430px) {
+
+  embed{
+    padding-top: 7rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 560px;
+    height: 280px;
+    padding-left: 0;
+    margin-left: 4px;
+    margin-bottom: 10%;
+  }
+
+  
+  .name{
+    margin-top: 35%;
+  }
+
+  .data-overview{
+    margin-top: 50px;
+    width: 440px;
+  }
+
+  .details{
+    width: 570px;
+  }
+
+  .search-bar{
+    margin-bottom: 1.5rem;
+    margin-right: 10px;
+  }
+
+  .search-bar button{
+    right: -11px;
+  }
+
+  .logo-placeholder img{
+    margin-top: 2rem;
+  }
+
+  .watch-options{
+    margin-bottom: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .large-container{
+    width: 570px;
+    height: 1250px;
+  }
+  
+}
+
+
+@media  (max-width: 370px) {
+
+  .watch-options{
+    margin-bottom: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .container {
+    background-color: #212141;
+    width: 500px;
+}
+
+  .search-bar{
+    margin-bottom: 1.5rem;
+    margin-right: 10px;
+  }
+
+  .search-bar button{
+    right: -19px;
+  }
+
+  .search-bar input{
+    width: 83%;
+    background-color: #322d65;
+    border: 2px solid #4a4484;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: white;
+    position: relative;
+    text-decoration: none;
+  }
+  
+}
+
+@media  (max-width: 290px) {
+
+  .container {
+    background-color: #212141;
+    width: 500px;
+    height: 200px;
+}
+
+  .search-bar{
+    margin-bottom: 1.5rem;
+    margin-right: 10px;
+  }
+
+  .search-bar input{
+    width: 80%;
+    background-color: #322d65;
+    border: 2px solid #4a4484;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: white;
+    position: relative;
+    text-decoration: none;
+  }
+  
 }
